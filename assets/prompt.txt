@@ -1,0 +1,1 @@
+我想做一flutter專案，內容是將一個網頁https://tw.msi.com/Graphics-Card/GeForce-RTX-5070-Ti-16G-FRIEREN-EDITION-OC寫到App上，附圖這是我想實作的區塊，我已完成一部份的網頁，但還須調整，請幫我看一下，若有要新增東西，請幫我加在main裡面，素材我都準備好了

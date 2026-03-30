@@ -1,0 +1,70 @@
+class ProductContentSection extends StatelessWidget {
+  const ProductContentSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      // 漸層背景色，模擬原網頁的淡藍/紫底色
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFFF4F6FB), // 頂部偏白/淺灰藍
+            Color(0xFFE5EAF3), // 底部稍深的淡藍色
+          ],
+        ),
+      ),
+      width: double.infinity,
+      child: Column(
+        children: [
+          const SizedBox(height: 35), // 頂部留白
+          // NVIDIA Logo
+          Image.asset(
+            'assets/images/body/ProductContent/nv.webp',
+            width: 130,
+            fit: BoxFit.contain,
+          ),
+
+          const SizedBox(height: 37),
+          // 葬送的芙莉蓮 標題
+          Image.asset(
+            'assets/images/body/ProductContent/frieren-edition-title-tc.webp',
+            width: 190,
+            fit: BoxFit.contain,
+          ),
+
+          // 芙莉蓮與欣梅爾 人物圖
+          Transform.translate(
+            offset: const Offset(0, -20),
+            child: Image.asset(
+              'assets/images/body/ProductContent/frieren.webp',
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.contain,
+            ),
+          ),
+
+          // 顯示卡圖 (利用 Transform.translate 往上偏移，製造重疊感)
+          Transform.translate(
+            offset: const Offset(0, -60),
+            child: Image.asset(
+              'assets/images/body/ProductContent/vga.webp',
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.contain,
+            ),
+          ),
+
+          // 底部產品名稱 Banner
+          Transform.translate(
+            offset: const Offset(0, -62), // 配合顯卡一起往上移，避免中間出現空隙
+            child: Image.asset(
+              'assets/images/body/ProductContent/title.webp',
+              width: MediaQuery.of(context).size.width * 0.9,
+              fit: BoxFit.fitWidth, 
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
